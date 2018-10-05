@@ -1,0 +1,38 @@
+.section1 {
+  border: 25px solid #FF285B;
+  padding: 10%
+}
+.logo {
+  width: 6%;
+  position: fixed;
+  top: 64px;
+  left: 64px;
+
+}
+.sectiona {
+  background-color: #34C6FD;
+  text-align: center;
+  height: 536px;
+}
+.sectionb {
+  background-color: #3FFFB8;
+  text-align: center;
+  height: 536px;
+}
+.sectionc {
+  background-color: #FFF682;
+  text-align: center;
+  height: 536px;
+}
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 536px;
+}
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
