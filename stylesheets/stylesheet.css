@@ -36,3 +36,12 @@
   align-items: center;
   justify-content: center;
 }
+.hovera {
+  position: absolute;
+  opacity: 0;
+}
+.hovera:hover {
+  opacity: 1;
+  transition-duration: 0.25s;
+
+}
