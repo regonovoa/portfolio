@@ -179,6 +179,7 @@ img{ display:block; max-width:100%; }
 .case .go{ display:inline-block; margin-top:26px; text-decoration:underline; text-underline-offset:.35em; font-size:.95rem; }
 .case:hover .go{ font-weight:500; }
 .case.soon{ cursor:none; }   /* coming soon: hovers like a case, custom "Coming Soon" cursor */
+#work .case:last-child{ border-bottom:var(--rule); }   /* close the featured-work list with a dashed rule under the last case */
 
 /* abstract CSS visuals inside featured cards */
 .case-visual{ position:relative; min-height:clamp(260px,36vw,460px); }
