@@ -359,6 +359,8 @@ img{ display:block; max-width:100%; }
 @media (max-width: 860px){
   .ch-head, .ch-body{ grid-template-columns:minmax(0,1fr); gap:14px; }
   .ch-body > aside{ display:none; }   /* chapter side-notes only make sense in the 2-column layout */
+  .ch-body > div > :first-child{ margin-top:0; }   /* first block sits at the same gap below the heading regardless of type (prose/kpis/cards/list) */
+  .ch-head{ gap:clamp(24px,4vh,44px); }   /* preheading→heading gap matches the heading→content gap (= ch-head margin-bottom) */
   .ch-num{ padding-top:0; }
   .case{ grid-template-columns:minmax(0,1fr); }
   .case.flip .case-visual{ order:0; }
