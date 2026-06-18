@@ -353,14 +353,14 @@ img{ display:block; max-width:100%; }
 
 /* ============ responsive ============ */
 @media (max-width: 860px){
-  .ch-head, .ch-body{ grid-template-columns:1fr; gap:14px; }
+  .ch-head, .ch-body{ grid-template-columns:minmax(0,1fr); gap:14px; }
   .ch-num{ padding-top:0; }
-  .case{ grid-template-columns:1fr; }
+  .case{ grid-template-columns:minmax(0,1fr); }
   .case.flip .case-visual{ order:0; }
   .case-visual{ display:none; }   /* the floating illustration overlaps on small screens */
-  .map{ grid-template-columns:1fr; }
+  .map{ grid-template-columns:minmax(0,1fr); }
   .map .from{ border-right:none; border-bottom:var(--rule); }
-  .about{ grid-template-columns:1fr; }
+  .about{ grid-template-columns:minmax(0,1fr); }
   .orn{ display:none; }
   .nav a:not(.keep){ display:none; }
 }
