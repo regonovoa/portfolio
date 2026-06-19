@@ -372,10 +372,19 @@ img{ display:block; max-width:100%; }
   .nav a:not(.keep){ display:none; }
 }
 
-/* ============ mobile carousel hint ============ */
-@keyframes swipe-hint{ 0%,100%{ transform:translateX(0); opacity:.5; } 50%{ transform:translateX(-7px); opacity:1; } }
-@media (max-width: 860px){
-  .flow-lbl{ display:flex; align-items:center; }                                  /* row screens scroll horizontally on mobile */
-  .flow-lbl::after{ content:"\2190"; margin-left:auto; font-size:1.2em; line-height:1; opacity:.65; animation:swipe-hint 1.5s ease-in-out infinite; }
+/* ============ carousel "next" button (shows only while the screen row can scroll) ============ */
+.flowband{ position:relative; }
+.flow-next{
+  position:absolute; top:50%; right:14px; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:50%; border:1.5px solid var(--ink);
+  background:var(--paper); color:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; line-height:1; padding:0 0 3px 2px; cursor:pointer;
+  box-shadow:0 4px 18px color-mix(in srgb, var(--ink) 32%, transparent);
+  transition:opacity .25s ease, background .2s ease, color .2s ease;
+  animation:flow-nudge 1.6s ease-in-out infinite;
 }
-@media (prefers-reduced-motion: reduce){ .flow-lbl::after{ animation:none; } }
+.flow-next:hover{ background:var(--ink); color:var(--paper); }
+.flow-next.off{ opacity:0; pointer-events:none; }
+@keyframes flow-nudge{ 0%,100%{ transform:translateY(-50%) translateX(0);} 50%{ transform:translateY(-50%) translateX(4px);} }
+@media (prefers-reduced-motion: reduce){ .flow-next{ animation:none; } }

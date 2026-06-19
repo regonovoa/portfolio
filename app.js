@@ -67,3 +67,21 @@ if (_soon.length && matchMedia('(hover:hover)').matches) {
     el.addEventListener('mouseleave', () => _cur.classList.remove('on'));
   });
 }
+
+// screen carousels: a circular "next" button that scrolls the row forward and hides at the end
+document.querySelectorAll('.flow-next').forEach((btn) => {
+  const flow = btn.parentElement.querySelector('.flow');
+  if (!flow) { btn.remove(); return; }
+  const update = () => {
+    const more = flow.scrollWidth - flow.clientWidth - flow.scrollLeft > 4;
+    btn.classList.toggle('off', !more);
+  };
+  btn.addEventListener('click', () => {
+    const phone = flow.querySelector('.phone');
+    const step = phone ? phone.getBoundingClientRect().width + 18 : flow.clientWidth * 0.8;
+    flow.scrollBy({ left: step, behavior: 'smooth' });
+  });
+  flow.addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+});
