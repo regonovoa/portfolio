@@ -223,7 +223,7 @@ img{ display:block; max-width:100%; }
    deliberate accent rather than a clash. */
 .flowband{ background:var(--ink-08); border:var(--rule); padding:clamp(20px,3vw,36px); margin-top:clamp(26px,4vh,44px); }   /* soft-blue band, square */
 .flow-lbl{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; margin-bottom:18px; }
-.flow{ display:flex; gap:clamp(14px,1.6vw,22px); overflow-x:auto; padding-bottom:10px; scroll-snap-type:x proximity; }
+.flow{ display:flex; gap:clamp(14px,1.6vw,22px); overflow-x:auto; padding-bottom:10px; margin-right:calc(clamp(20px,3vw,36px) * -1); scroll-snap-type:x proximity; }
 .phone{ flex:0 0 auto; width:clamp(150px,16vw,196px); scroll-snap-align:start; }
 .phone .screen{
   position:relative; border-radius:26px; overflow:hidden;
@@ -375,16 +375,12 @@ img{ display:block; max-width:100%; }
 /* ============ carousel "next" button (shows only while the screen row can scroll) ============ */
 .flowband{ position:relative; }
 .flow-next{
-  position:absolute; top:50%; right:14px; transform:translateY(-50%);
+  position:absolute; top:50%; right:14px; transform:translateY(-50%); z-index:3;
   width:44px; height:44px; border-radius:50%; border:1.5px solid var(--ink);
   background:var(--paper); color:var(--ink);
   display:flex; align-items:center; justify-content:center;
   font-size:1.5rem; line-height:1; padding:0 0 3px 2px; cursor:pointer;
-  box-shadow:0 4px 18px color-mix(in srgb, var(--ink) 32%, transparent);
   transition:opacity .25s ease, background .2s ease, color .2s ease;
-  animation:flow-nudge 1.6s ease-in-out infinite;
 }
 .flow-next:hover{ background:var(--ink); color:var(--paper); }
 .flow-next.off{ opacity:0; pointer-events:none; }
-@keyframes flow-nudge{ 0%,100%{ transform:translateY(-50%) translateX(0);} 50%{ transform:translateY(-50%) translateX(4px);} }
-@media (prefers-reduced-motion: reduce){ .flow-next{ animation:none; } }
