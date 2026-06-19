@@ -371,3 +371,11 @@ img{ display:block; max-width:100%; }
   .orn{ display:none; }
   .nav a:not(.keep){ display:none; }
 }
+
+/* ============ mobile carousel hint ============ */
+@keyframes swipe-hint{ 0%,100%{ transform:translateX(0); opacity:.5; } 50%{ transform:translateX(-7px); opacity:1; } }
+@media (max-width: 860px){
+  .flow-lbl{ display:flex; align-items:center; }                                  /* row screens scroll horizontally on mobile */
+  .flow-lbl::after{ content:"\2190"; margin-left:auto; font-size:1.2em; line-height:1; opacity:.65; animation:swipe-hint 1.5s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce){ .flow-lbl::after{ animation:none; } }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agentic TaxDown — case study · pablo rego</title>
-<meta name="description" content="Case study: an agentic experience that tailors the tax return to each person. A shipped MVP at TaxDown and the end-to-end generative experience now reimagining it.">
+<meta name="description" content="Case study: an experience that tailors the tax return to each person. A shipped MVP at TaxDown and the end-to-end generative experience now reimagining it.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
     <p class="kicker rv">Case 01 · TaxDown · 2025 → ongoing</p>
     <h1 class="rv" data-depth="-0.02">Agentic TaxDown</h1>
     <p class="sub rv">
-      An agentic experience that tailors the tax return to each person filing it.
+      An experience that tailors the tax return to each person filing it.
       The AI does the reach. A human advisor keeps the accountability.
     </p>
   </section>
@@ -83,7 +83,7 @@
         <div class="cards rv">
           <div class="card"><span class="idx">01</span><h4>Quantitative friction</h4><p>The more complex the return, the more data to provide: more screens, more forms, more fields. Sheer volume.</p></div>
           <div class="card"><span class="idx">02</span><h4>Uncertainty</h4><p>Complex data doesn't live in your head: rental dates, sale values, expenses, crypto trades. People often don't know what's being asked, and even when they do, they don't know where to find it. That also lands as a heavy support load on the company.</p></div>
-          <div class="card"><span class="idx">03</span><h4>Accompaniment gap</h4><p>These users are used to delegating to an advisor who does the hard part with precision. A human-only team can't scale that, and gets low-quality data back, which means endless back-and-forth during the flow and at review.</p></div>
+          <div class="card"><span class="idx">03</span><h4>Accompaniment gap</h4><p>These users are used to delegating to an advisor who does the hard part with precision. The current flow doesn't give that — and bespoke accompaniment for every filer would take far more human resources than it scales to. Left to self-serve, they return low-quality data, which means endless back-and-forth during the flow and at review.</p></div>
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@
         <div class="cards rv">
           <div class="card"><span class="idx">↓</span><h4>Ask less</h4><p>Cut the quantitative friction. Only ask what a case needs, never what we already know.</p></div>
           <div class="card"><span class="idx">?</span><h4>Remove uncertainty</h4><p>Read each user and how they are behaving, then give them the context their case needs, which data matters and where to find it.</p></div>
-          <div class="card"><span class="idx">+</span><h4>Accompany, proactively</h4><p>Step in before the user knows there is a problem, heading off needless escalations to human advisors and curating the information those advisors receive.</p></div>
+          <div class="card"><span class="idx">+</span><h4>Accompany, proactively</h4><p>Solve the user's problems before they realise they have them, heading off needless escalations to human advisors and curating the information those advisors receive.</p></div>
         </div>
       </div>
     </div>
@@ -120,9 +120,10 @@
       <div>
         <div class="prose rv">
           <p>
-            To validate the hypotheses we started small. Some property sections went through
-            the classic form, others through a new experience guided by a conversational
-            agent, so the test ran right beside the control.
+            To validate the hypotheses we scoped down to one slice of the return — the
+            property section, complex enough to matter and self-contained enough to test
+            cleanly. Some of those sections went through the classic form, others through a new
+            experience guided by a conversational agent, so the test ran right beside the control.
           </p>
           <p>
             <b>Ask less.</b> The agent asks only what we need. No pre-filled forms to read,
@@ -182,7 +183,7 @@
         </div>
 
         <div class="callout rv">
-          <h4>Reading the numbers</h4>
+          <h4>Disclaimers</h4>
           <ul>
             <li><b>Self-selection.</b> Users pick the agent at the selector, so the cohorts aren't randomised. The +9.2% is directional, and a clean A/B is designed and pending.</li>
             <li><b>We retired our own headline.</b> An earlier read claimed the agent was 34% faster. A later audit found the form's timing skewed by single-page re-entries, so we pulled the claim and rebuilt the method, tagging modality on every event from day one.</li>
@@ -207,7 +208,7 @@
           <li><b>One property at a time isn't enough compounding.</b> Because each property is a separate conversation, we can't synthesise across them. Collapsing four fields into "the buy and sell dates and prices of your Lavapiés flat" saves a little. The real prize, "last year you lived with your son Jaime as a dependent in the Montera flat and rented out the other three, still true?", needs the whole return in one conversation.</li>
           <li><b>We over-constrained the agent.</b> Fear of fiscal errors made it more deterministic than we wanted, which, paradoxically, produced more hallucination and rigidity, not less.</li>
           <li><b>For confident users, the conversation added friction.</b> Reading and writing more than a form makes no sense when someone already knows their data cold. The help matters most exactly when the user is unsure.</li>
-          <li><b>We were fighting a technology that moves at dizzying speed</b>, hand to hand, week to week.</li>
+          <li><b>We were building on ground that kept moving.</b> The models shifted capability week to week, so calls that were right at build time were stale by ship, and patterns had to be rebuilt almost as fast as we set them.</li>
         </ul>
       </div>
     </div>
@@ -252,6 +253,7 @@
         <div class="card"><h4>Less friction</h4><p>User interventions, data points required, and time to a result, measured against the classic flow.</p></div>
         <div class="card"><h4>The correctness gate</h4><p>Non-negotiable. At equal data, the agent's result must be identical to TaxDown's. The engine is the judge.</p></div>
         <div class="card"><h4>More accompaniment</h4><p>How often users ask open questions or for a human, whether they correct or defer data, and the richness of what they volunteer in natural language.</p></div>
+        <div class="card"><h4>Qualitative testing</h4><p>Moderated sessions with real filers — where they hesitate, what they trust, what they say in their own words. The numbers tell us what happened; users tell us why.</p></div>
       </div>
 
       <div class="flowband">
