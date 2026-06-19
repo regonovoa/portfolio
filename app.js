@@ -85,3 +85,11 @@ document.querySelectorAll('.flow-next').forEach((btn) => {
   addEventListener('resize', update);
   update();
 });
+
+// center the home hero in the space below the fixed header (independent of the floating scroll cue)
+const _homeHead = document.querySelector('.site-head.home');
+if (_homeHead) {
+  const _setNavH = () => document.documentElement.style.setProperty('--nav-h', _homeHead.offsetHeight + 'px');
+  _setNavH();
+  addEventListener('resize', _setNavH);
+}

@@ -76,7 +76,7 @@ img{ display:block; max-width:100%; }
   line-height:1.04; letter-spacing:-.014em;
 }
 /* full-viewport hero: only the name + the arrow, at any size */
-.hero.home{ min-height:100svh; padding-block:0; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
+.hero.home{ min-height:100svh; padding-block:var(--nav-h,72px) 0; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
 .site-head.home{ position:fixed; left:0; right:0; top:0; }   /* float over the full-viewport hero */
 #work{ scroll-margin-top:80px; }
 .scroll-cue{ position:absolute; bottom:clamp(20px,4vh,40px); left:50%; transform:translateX(-50%); font-size:1.7rem; line-height:1; text-decoration:none; color:var(--ink); animation:bob 1.8s ease-in-out infinite; }
