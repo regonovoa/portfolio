@@ -223,7 +223,7 @@ img{ display:block; max-width:100%; }
    deliberate accent rather than a clash. */
 .flowband{ background:var(--ink-08); border:var(--rule); padding:clamp(20px,3vw,36px); margin-top:clamp(26px,4vh,44px); }   /* soft-blue band, square */
 .flow-lbl{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; margin-bottom:18px; }
-.flow{ display:flex; gap:clamp(14px,1.6vw,22px); overflow-x:auto; padding-bottom:10px; margin-right:calc(clamp(20px,3vw,36px) * -1); scroll-snap-type:x proximity; }
+.flow{ display:flex; gap:clamp(14px,1.6vw,22px); overflow-x:auto; padding:0 clamp(20px,3vw,36px) 10px; margin-inline:calc(clamp(20px,3vw,36px) * -1); scroll-padding-inline:clamp(20px,3vw,36px); scroll-snap-type:x proximity; }
 .phone{ flex:0 0 auto; width:clamp(150px,16vw,196px); scroll-snap-align:start; }
 .phone .screen{
   position:relative; border-radius:26px; overflow:hidden;
