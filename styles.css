@@ -138,6 +138,7 @@ img{ display:block; max-width:100%; }
 .ch-num{ font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; padding-top:.9em; }
 .ch-title{ font-family:var(--serif); font-weight:400; font-size:clamp(1.9rem,3.8vw,3rem); line-height:1.08; letter-spacing:-.01em; }
 .ch-body{ display:grid; grid-template-columns:minmax(0,3fr) minmax(0,9fr); gap:clamp(20px,3vw,60px); }
+.ch-body > div > :first-child{ margin-top:0; }   /* heading→content gap is owned by ch-head margin-bottom, not the first block */
 .ch-body > aside{ font-size:.82rem; line-height:1.5; color:color-mix(in srgb, var(--ink) 58%, var(--paper)); }
 .ch-body > aside p + p{ margin-top:.8em; }
 
@@ -338,7 +339,8 @@ img{ display:block; max-width:100%; }
 .milestone > .wrap{ padding-block:clamp(64px,10vh,120px); }
 .milestone .m-eyebrow{ font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; font-weight:500; }
 .milestone .m-title{ font-family:var(--serif); font-weight:400; font-size:clamp(2.2rem,5vw,3.9rem); line-height:1.03; letter-spacing:-.014em; margin:16px 0 clamp(22px,4vh,38px); max-width:20ch; }
-.milestone .sub-h{ font-family:var(--serif); font-weight:400; font-size:clamp(1.3rem,2.1vw,1.8rem); margin:clamp(34px,5vh,56px) 0 0; }
+.milestone .sub-h{ font-family:var(--serif); font-weight:400; font-size:clamp(1.3rem,2.1vw,1.8rem); margin:clamp(34px,5vh,56px) 0 clamp(24px,4vh,44px); }
+.milestone .sub-h + *{ margin-top:0; }   /* same heading→content gap as chapters */
 /* the milestone stays uniformly soft-blue; the only white is the screens */
 
 /* full-width opener (no aside column) */
@@ -359,7 +361,6 @@ img{ display:block; max-width:100%; }
 @media (max-width: 860px){
   .ch-head, .ch-body{ grid-template-columns:minmax(0,1fr); gap:14px; }
   .ch-body > aside{ display:none; }   /* chapter side-notes only make sense in the 2-column layout */
-  .ch-body > div > :first-child{ margin-top:0; }   /* first block sits at the same gap below the heading regardless of type (prose/kpis/cards/list) */
   .ch-head{ gap:clamp(24px,4vh,44px); }   /* preheading→heading gap matches the heading→content gap (= ch-head margin-bottom) */
   .ch-num{ padding-top:0; }
   .case{ grid-template-columns:minmax(0,1fr); }
